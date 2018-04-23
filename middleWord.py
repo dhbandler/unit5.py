@@ -6,4 +6,7 @@ words = input("Input words ").split(" ")
 
 length = len(words)
 
-print(L[length/2)
+if length%2==0:
+    print(words[((length)//2)-1:(length)//2+1])
+else:
+    print(words[((length)//2)])
