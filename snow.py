@@ -15,11 +15,11 @@ def step():
     for snow in data["snowlist"]:
         if snow.y <= HEIGHT:
             snow.y += 1
-    
+
     
 def moreSnow():
     data["frames"] += 1
-    if data["frames"] == 50:
+    if data["frames"] % 50==0:
         data["snowlist"].append(Sprite(snow,(randint(1,WIDTH),0)))
     
 
