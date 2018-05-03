@@ -1,6 +1,6 @@
 #Daniel Bandler
-#5/2/18
-#cocktailSortDemo.py - times a sorting function
+#5/3/18
+#cocktailSortDemo.py - Using cockatil sort
 
 from random import randint
 from time import time
@@ -8,6 +8,21 @@ from time import time
 N = 10 #how many numbers will be sorted
 
 def mySort(A):
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(0,len(A)-1):
+            if A[i] > A[i+1]:
+                A[i], A[i+1] = A[i+1], A[i] #swap in python
+                swapped = True
+        if not swapped:
+            break
+        swapped = False
+        for i in range(len(A)-2,-1,-1):
+            if A[i] > A[i+1]:
+                A[i], A[i+1] = A[i+1], A[i] #swap in python
+                swapped = True
+        
     return A
     
 if __name__ == '__main__':
@@ -30,4 +45,3 @@ if __name__ == '__main__':
         print('Your sort took', t2-t1, 'seconds')
     except:
         print('Your sort did not work')
-
